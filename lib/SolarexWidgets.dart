@@ -10,97 +10,56 @@ class SolarexWidgets extends StatelessWidget {
 
   Widget horizontalRecommandSolutions() {
     initRecommandSolutions();
-//    return ListView.separated(
-//      shrinkWrap: true,
-//      scrollDirection: Axis.horizontal,
-//      itemCount: recommandSolutions.length,
-//      separatorBuilder: (context, index) {
-//        return new Container(
-//          width: 15.0,
-//        );
-//      },
-//      itemBuilder: (context, index) {
-//        return new Container(
-//          child: new Column(
-//            mainAxisSize: MainAxisSize.min,
-//            children: <Widget>[
-//              new Container(
-//                width: 132,
-//                alignment: Alignment.center,
-//                child: new AspectRatio(
-//                  aspectRatio: 132 / 116,
-//                  child: new Image.network(
-//                    recommandSolutions[index]['url'],
-//                    fit: BoxFit.cover,
-//                  ),
-//                ),
-//              ),
-//              new Container(
-//                margin: EdgeInsets.only(top: 17.0),
-//                alignment: Alignment.center,
-//                child: new Text(
-//                  recommandSolutions[index]['title'],
-//                  style: new TextStyle(
-//                    fontSize: 14.0,
-//                    color: const Color(0xff374147),
-//                    decoration: TextDecoration.none,
-//                  ),
-//                ),
-//              ),
-//              new Container(
-//                margin: EdgeInsets.only(top: 7.0, bottom: 12.0),
-//                alignment: Alignment.center,
-//                child: new Text(
-//                  recommandSolutions[index]['subtitle'],
-//                  style: new TextStyle(
-//                    color: const Color(0xffAAB2B7),
-//                    fontSize: 10.0,
-//                    decoration: TextDecoration.none,
-//                  ),
-//                ),
-//              )
-//            ],
-//          ),
-//        );
-//      },
-//    );
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: new Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          new Text(
-            '推荐方案',
-            style: new TextStyle(
+    return Scaffold(body:
+    Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Text('推荐方案',
+          style: TextStyle(
               color: const Color(0xff263238),
-              fontSize: 20.0,
-              decoration: TextDecoration.none,
-            ),
+              fontSize: 20.0
+          )),
+        ),
+
+        Container(
+          height: 198,
+          // color: Colors.orange,
+          child: ListView.separated(
+            itemCount: 30,
+            padding: const EdgeInsets.all(20),
+            scrollDirection: Axis.horizontal,
+            separatorBuilder: (context, index) {
+              return Container(
+                width: 15,
+                height: 15,
+                color: Colors.transparent,
+              );
+            },
+            itemBuilder: (context, index) {
+              return Container(
+                width: 132,
+                height: 178,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular((4.0)),
+                  // 生成俩层阴影，一层绿，一层黄， 阴影位置由offset决定,阴影模糊层度由blurRadius大小决定（大就更透明更扩散），阴影模糊大小由spreadRadius决定
+                  boxShadow: [
+                    BoxShadow(
+                        color: const Color(0x1A000000),
+                        offset: Offset(0, 5.0),
+                        blurRadius: 10.0,
+                        spreadRadius: 2.0
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-          Container(
-            margin: EdgeInsets.only(top: 10.0),
-            height: 100.0,
-            constraints: BoxConstraints(
-                maxHeight: 190
-            ),
-            child: ListView.separated(
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemCount: recommandSolutions.length,
-              separatorBuilder: (context, index) {
-                return new Container(
-                  width: 15.0,
-                );
-              },
-              itemBuilder: (context, index) {
-                return new Container();
-              },
-            ),
-          ),
-        ],
-      ),
-    );
+        ),
+      ],
+    ),);
   }
 
   void initRecommandSolutions() {

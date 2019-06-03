@@ -3,7 +3,98 @@ import 'package:flutter/material.dart';
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return newHorizontalRecommandSolutions();
+    return verticalSetTarget();
+  }
+
+  Widget verticalSetTarget() {
+    initRecommandSolutions();
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 30, left: 20, right: 20),
+        child: ListView.separated(
+            itemBuilder: ((BuildContext context, int index) {
+              return Container(
+                height: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(
+                        color: const Color(0xffF2F4F5),
+                        width: 1.0
+                    )
+                ),
+                alignment: Alignment.centerLeft,
+                child: Stack(
+                  children: <Widget>[
+                    Positioned(
+
+                      left: 20,
+                      child: Icon(Icons.star,
+                        size: 15,),
+                    ),
+                    Positioned(
+                      left: 45,
+                      child: Text("hello",
+                        style: TextStyle(
+                            color: const Color(0xff374147),
+                            fontSize: 16
+                        ),),
+                    ),
+                    Positioned(
+                      right: 15,
+                      child: Image.asset("images/solution_arrow_next.png",
+                        width: 7,
+                        height: 14,),
+                    )
+                  ],
+                ),
+              );
+            }),
+            separatorBuilder: ((BuildContext context, int index) {
+              return Container(
+                height: 10,
+                color: Colors.transparent,
+              );
+            }),
+            itemCount: recommandSolutions.length),
+      ),
+    );
+  }
+
+  Widget buildContainer() {
+    return Container(
+      height: 30,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(
+              color: const Color(0xffF2F4F5),
+              width: 1.0
+          )
+      ),
+      alignment: Alignment.center,
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            left: 20,
+            child: Icon(Icons.star,
+              size: 15,),
+          ),
+          Positioned(
+            left: 45,
+            child: Text("hello",
+              style: TextStyle(
+                  color: const Color(0xff374147),
+                  fontSize: 16
+              ),),
+          ),
+          Positioned(
+            right: 15,
+            child: Image.asset("images/solution_arrow_next.png",
+              width: 7,
+              height: 14,),
+          )
+        ],
+      ),
+    );
   }
 
   Widget newHorizontalRecommandSolutions() {
@@ -55,9 +146,8 @@ class SolarexWidgets extends StatelessWidget {
                             child: Text(
                               recommandSolutions[index]['title'],
                               style: TextStyle(
-                                color: const Color(0xff5A3D2D),
-                                fontSize: 10.0
-                              ),
+                                  color: const Color(0xff5A3D2D),
+                                  fontSize: 10.0),
                             )),
                         Positioned(
                           top: 55,
@@ -68,24 +158,24 @@ class SolarexWidgets extends StatelessWidget {
                             height: 15,
                             decoration: BoxDecoration(
                               border: Border.all(
-                                color: const Color(0xff5A3D2D),
-                                width: 1.0
-                              ),
+                                  color: const Color(0xff5A3D2D), width: 1.0),
                               borderRadius: BorderRadius.circular(13),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 2),
-                                  child: Icon(Icons.star,
-                                  size: 7,)
-                                ),
-                                Text(recommandSolutions[index]['subtitle'],
-                                style: TextStyle(
-                                  color: const Color(0xff5A3D2D),
-                                  fontSize: 8
-                                ),)
+                                    padding: const EdgeInsets.only(right: 2),
+                                    child: Icon(
+                                      Icons.star,
+                                      size: 7,
+                                    )),
+                                Text(
+                                  recommandSolutions[index]['subtitle'],
+                                  style: TextStyle(
+                                      color: const Color(0xff5A3D2D),
+                                      fontSize: 8),
+                                )
                               ],
                             ),
                           ),

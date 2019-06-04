@@ -17,33 +17,33 @@ class SolarexWidgets extends StatelessWidget {
                 height: 60,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    border: Border.all(
-                        color: const Color(0xffF2F4F5),
-                        width: 1.0
-                    )
-                ),
-                alignment: Alignment.centerLeft,
+                    border:
+                        Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
                 child: Stack(
+                  alignment: Alignment.center,
                   children: <Widget>[
                     Positioned(
-
                       left: 20,
-                      child: Icon(Icons.star,
-                        size: 15,),
+                      child: Icon(
+                        Icons.star,
+                        size: 15,
+                      ),
                     ),
                     Positioned(
                       left: 45,
-                      child: Text("hello",
+                      child: Text(
+                        "hello",
                         style: TextStyle(
-                            color: const Color(0xff374147),
-                            fontSize: 16
-                        ),),
+                            color: const Color(0xff374147), fontSize: 16),
+                      ),
                     ),
                     Positioned(
                       right: 15,
-                      child: Image.asset("images/solution_arrow_next.png",
+                      child: Image.asset(
+                        "images/solution_arrow_next.png",
                         width: 7,
-                        height: 14,),
+                        height: 14,
+                      ),
                     )
                   ],
                 ),
@@ -65,32 +65,31 @@ class SolarexWidgets extends StatelessWidget {
       height: 30,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(
-              color: const Color(0xffF2F4F5),
-              width: 1.0
-          )
-      ),
+          border: Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
       alignment: Alignment.center,
       child: Stack(
         children: <Widget>[
           Positioned(
             left: 20,
-            child: Icon(Icons.star,
-              size: 15,),
+            child: Icon(
+              Icons.star,
+              size: 15,
+            ),
           ),
           Positioned(
             left: 45,
-            child: Text("hello",
-              style: TextStyle(
-                  color: const Color(0xff374147),
-                  fontSize: 16
-              ),),
+            child: Text(
+              "hello",
+              style: TextStyle(color: const Color(0xff374147), fontSize: 16),
+            ),
           ),
           Positioned(
             right: 15,
-            child: Image.asset("images/solution_arrow_next.png",
+            child: Image.asset(
+              "images/solution_arrow_next.png",
               width: 7,
-              height: 14,),
+              height: 14,
+            ),
           )
         ],
       ),

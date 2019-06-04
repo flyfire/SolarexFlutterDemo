@@ -3,7 +3,105 @@ import 'package:flutter/material.dart';
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return verticalSetTarget();
+    return energyManagement();
+  }
+
+  Widget energyManagement() {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 37, left: 20, right: 20),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(color: const Color(0xffF2F4F5), width: 1.0),
+            boxShadow: [
+              BoxShadow(
+                  color: const Color(0x1A000000),
+                  offset: Offset(0, 4.0),
+                  blurRadius: 20.0,
+                  spreadRadius: 0.0),
+            ],
+          ),
+          height: 270.0,
+          child: Stack(
+            children: <Widget>[
+              Positioned(
+                top: 15,
+                left: 15,
+                child: Text("疲劳量表",
+                  style: TextStyle(
+                      color: const Color(0xff374147),
+                      fontSize: 14.0
+                  ),),
+              ),
+              Positioned(
+                top: 60.5,
+                left: 15,
+                right: 15,
+                child: Container(
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: const Color(0xfff2f4f5),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: const Color(0xffF2F4F5), width: 1.0),
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: <Widget>[
+                      Positioned(
+                        left: 15,
+                        child: Text("疲劳得分：",
+                        style: TextStyle(
+                          color: const Color(0xff808184),
+                          fontSize: 12
+                        ),),
+                      ),
+                      Positioned(
+                        left: 80,
+                        child: Text("60分",
+                        style: TextStyle(
+                          color: const Color(0xff374147),
+                          fontSize: 15
+                        ),),
+                      ),
+                      Positioned(
+                        right: 61,
+                        child: Image.asset("images/btn_again.png",
+                        width: 12,
+                        height: 10,),
+                      ),
+                      Positioned(
+                        right: 15,
+                        child: Text("重新测试",
+                        style: TextStyle(
+                          color: const Color(0xff1AD9CA),
+                          fontSize: 10
+                        ),),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 130,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("目标疲劳得分"
+                      ,style: TextStyle(
+                          color: const Color(0xffAAB2B7),
+                          fontSize: 12
+                      ),),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget verticalSetTarget() {
@@ -18,7 +116,7 @@ class SolarexWidgets extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                     border:
-                        Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
+                    Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
                 child: Stack(
                   alignment: Alignment.center,
                   children: <Widget>[
@@ -208,7 +306,7 @@ class SolarexWidgets extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: Text('推荐方案',
                 style:
-                    TextStyle(color: const Color(0xff263238), fontSize: 20.0)),
+                TextStyle(color: const Color(0xff263238), fontSize: 20.0)),
           ),
           Container(
             height: 198,

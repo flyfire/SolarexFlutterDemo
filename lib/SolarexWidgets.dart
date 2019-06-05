@@ -25,15 +25,16 @@ class SolarexWidgets extends StatelessWidget {
           ),
           height: 270.0,
           child: Stack(
+            alignment: Alignment.center,
             children: <Widget>[
               Positioned(
                 top: 15,
                 left: 15,
-                child: Text("疲劳量表",
-                  style: TextStyle(
-                      color: const Color(0xff374147),
-                      fontSize: 14.0
-                  ),),
+                child: Text(
+                  "疲劳量表",
+                  style:
+                      TextStyle(color: const Color(0xff374147), fontSize: 14.0),
+                ),
               ),
               Positioned(
                 top: 60.5,
@@ -44,58 +45,63 @@ class SolarexWidgets extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xfff2f4f5),
                     borderRadius: BorderRadius.circular(4),
-                    border: Border.all(color: const Color(0xffF2F4F5), width: 1.0),
+                    border:
+                        Border.all(color: const Color(0xffF2F4F5), width: 1.0),
                   ),
                   child: Stack(
                     alignment: Alignment.center,
                     children: <Widget>[
                       Positioned(
                         left: 15,
-                        child: Text("疲劳得分：",
-                        style: TextStyle(
-                          color: const Color(0xff808184),
-                          fontSize: 12
-                        ),),
+                        child: Text(
+                          "疲劳得分：",
+                          style: TextStyle(
+                              color: const Color(0xff808184), fontSize: 12),
+                        ),
                       ),
                       Positioned(
                         left: 80,
-                        child: Text("60分",
-                        style: TextStyle(
-                          color: const Color(0xff374147),
-                          fontSize: 15
-                        ),),
+                        child: Text(
+                          "60分",
+                          style: TextStyle(
+                              color: const Color(0xff374147), fontSize: 15),
+                        ),
                       ),
                       Positioned(
                         right: 61,
-                        child: Image.asset("images/btn_again.png",
-                        width: 12,
-                        height: 10,),
+                        child: Image.asset(
+                          "images/btn_again.png",
+                          width: 12,
+                          height: 10,
+                        ),
                       ),
                       Positioned(
                         right: 15,
-                        child: Text("重新测试",
-                        style: TextStyle(
-                          color: const Color(0xff1AD9CA),
-                          fontSize: 10
-                        ),),
+                        child: Text(
+                          "重新测试",
+                          style: TextStyle(
+                              color: const Color(0xff1AD9CA), fontSize: 10),
+                        ),
                       )
                     ],
                   ),
                 ),
               ),
               Positioned(
-                top: 130,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text("目标疲劳得分"
-                      ,style: TextStyle(
-                          color: const Color(0xffAAB2B7),
-                          fontSize: 12
-                      ),),
-                  ],
-                ),
+                  top: 130,
+                  child: Text(
+                    "目标疲劳得分",
+                    style:
+                        TextStyle(color: const Color(0xffAAB2B7), fontSize: 12),
+                  )),
+              Positioned(
+                top: 160,
+                left: 43.5,
+                right: 43.5,
+                child: Container(
+                  color: Colors.green,
+                  height: 80,
+                )
               )
             ],
           ),
@@ -116,7 +122,7 @@ class SolarexWidgets extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
                     border:
-                    Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
+                        Border.all(color: const Color(0xffF2F4F5), width: 1.0)),
                 child: Stack(
                   alignment: Alignment.center,
                   children: <Widget>[
@@ -306,7 +312,7 @@ class SolarexWidgets extends StatelessWidget {
             padding: const EdgeInsets.only(left: 20),
             child: Text('推荐方案',
                 style:
-                TextStyle(color: const Color(0xff263238), fontSize: 20.0)),
+                    TextStyle(color: const Color(0xff263238), fontSize: 20.0)),
           ),
           Container(
             height: 198,

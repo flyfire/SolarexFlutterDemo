@@ -3,7 +3,70 @@ import 'package:flutter/material.dart';
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return energyManagement();
+    return energyManagementNoData();
+  }
+
+  Widget energyManagementNoData() {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.only(top: 37, left: 20, right: 20),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(4),
+            border: Border.all(color: const Color(0xffF2F4F5), width: 1.0),
+            boxShadow: [
+              BoxShadow(
+                  color: const Color(0x1A000000),
+                  offset: Offset(0, 4.0),
+                  blurRadius: 20.0,
+                  spreadRadius: 0.0),
+            ],
+          ),
+          height: 270.0,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              Positioned(
+                top: 15,
+                left: 15,
+                child: Text(
+                  "疲劳量表",
+                  style:
+                      TextStyle(color: const Color(0xff374147), fontSize: 14.0),
+                ),
+              ),
+              Positioned(
+                top: 75,
+                child: Image.asset(
+                  "images/pic_tired.png",
+                  width: 117,
+                  height: 105,
+                ),
+              ),
+              Positioned(
+                top: 197.5,
+                child: Text(
+                  "暂无疲劳得分，先测试，后设置目标",
+                  style:
+                      TextStyle(color: const Color(0xffAAB2B7), fontSize: 13),
+                ),
+              ),
+              Positioned(
+                top: 231.5,
+                child: GestureDetector(
+                  onTap: (){
+                    print("去测试");
+                  },
+                  child: Text("去测试",
+                    style: TextStyle(color: const Color(0xff1AD9CA), fontSize: 14),),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Widget energyManagement() {
@@ -95,14 +158,13 @@ class SolarexWidgets extends StatelessWidget {
                         TextStyle(color: const Color(0xffAAB2B7), fontSize: 12),
                   )),
               Positioned(
-                top: 160,
-                left: 43.5,
-                right: 43.5,
-                child: Container(
-                  color: Colors.green,
-                  height: 80,
-                )
-              )
+                  top: 160,
+                  left: 43.5,
+                  right: 43.5,
+                  child: Container(
+                    color: Colors.green,
+                    height: 80,
+                  ))
             ],
           ),
         ),

@@ -42,6 +42,7 @@ flutter:
   assets:
     - images/solution_arrow_next.png
     - images/btn_again.png
+    - images/pic_tired.png
   # To add assets to your application, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

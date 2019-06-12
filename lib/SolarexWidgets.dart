@@ -1,9 +1,137 @@
 import 'package:flutter/material.dart';
-
+import 'TYTools.dart';
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return energyManagementNoData();
+    return planDetailsHeader();
+  }
+
+  Widget planDetailsHeader() {
+    return Scaffold(
+      body: Stack(
+        children: <Widget>[
+          AspectRatio(
+            aspectRatio: 375/215,
+            child: Image.network(
+                "http://seopic.699pic.com/photo/50054/7969.jpg_wh1200.jpg"),
+          ),
+          Positioned(
+            top: 24.0,
+            height: 44.0,
+            child: getTitlebar(),
+          ),
+          Positioned(
+            left: 20,
+            right: 20,
+            top: 160,
+            child: getFinishedAvaters(),
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget getTitlebar() {
+    return Container(
+      height: 44.0,
+      width: TYTool.screenWidth(),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+      ),
+      child: Stack(
+        alignment: Alignment.bottomLeft,
+        children: <Widget>[backButton(), titleText()],),
+    );
+  }
+
+  Widget backButton() {
+    return Container(
+      height: 40.0,
+      width: 40.0,
+      margin: EdgeInsets.only(left: 15.0),
+      child: MaterialButton(
+        padding: EdgeInsets.all(0.0),
+        //水波纹颜色透明
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        child: Icon(Icons.star, color: Colors.green,),
+        onPressed: () {
+        },
+      ),
+    );
+  }
+  Widget titleText() {
+    return Container(
+        height: 40.0,
+        alignment: Alignment.center,
+        child: Container(
+          width: 150.0,
+          alignment: Alignment.center,
+          child: Text(
+            "计划详情",
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              color: Colors.white,
+              decoration: TextDecoration.none,
+              fontSize: 18.0,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        )
+    );
+  }
+
+  Widget getFinishedAvaters() {
+    return Container(
+      height: 35,
+      decoration: BoxDecoration(
+          color: const Color(0x4d000000),
+          borderRadius: BorderRadius.circular(35)
+      ),
+      child: Stack(
+        alignment: Alignment.center,
+        children: <Widget>[
+          Positioned(
+            left: 15,
+            child: Text("12345人已完成", style: TextStyle(
+                color: Colors.white,
+                fontSize: 10
+            ),),
+          ),
+          Positioned(
+            right: 79.5,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          ),
+          Positioned(
+            right: 62.3,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          ),
+          Positioned(
+            right: 44.9,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          ),
+          Positioned(
+            right: 27.7,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          ),
+          Positioned(
+            right: 11,
+            child: CircleAvatar(
+              backgroundColor: Colors.green,
+            ),
+          )
+        ],
+      ),
+    );
   }
 
   Widget energyManagementNoData() {

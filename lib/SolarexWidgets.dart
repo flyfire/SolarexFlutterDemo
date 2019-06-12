@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'TYTools.dart';
+
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -11,7 +13,7 @@ class SolarexWidgets extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           AspectRatio(
-            aspectRatio: 375/215,
+            aspectRatio: 375 / 215,
             child: Image.network(
                 "http://seopic.699pic.com/photo/50054/7969.jpg_wh1200.jpg"),
           ),
@@ -40,7 +42,8 @@ class SolarexWidgets extends StatelessWidget {
       ),
       child: Stack(
         alignment: Alignment.bottomLeft,
-        children: <Widget>[backButton(), titleText()],),
+        children: <Widget>[backButton(), titleText()],
+      ),
     );
   }
 
@@ -54,12 +57,15 @@ class SolarexWidgets extends StatelessWidget {
         //水波纹颜色透明
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
-        child: Icon(Icons.star, color: Colors.green,),
-        onPressed: () {
-        },
+        child: Icon(
+          Icons.star,
+          color: Colors.green,
+        ),
+        onPressed: () {},
       ),
     );
   }
+
   Widget titleText() {
     return Container(
         height: 40.0,
@@ -78,8 +84,7 @@ class SolarexWidgets extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-        )
-    );
+        ));
   }
 
   Widget getFinishedAvaters() {
@@ -87,48 +92,93 @@ class SolarexWidgets extends StatelessWidget {
       height: 35,
       decoration: BoxDecoration(
           color: const Color(0x4d000000),
-          borderRadius: BorderRadius.circular(35)
-      ),
+          borderRadius: BorderRadius.circular(35)),
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
           Positioned(
             left: 15,
-            child: Text("12345人已完成", style: TextStyle(
-                color: Colors.white,
-                fontSize: 10
-            ),),
+            child: Text(
+              "12345人已完成",
+              style: TextStyle(color: Colors.white, fontSize: 10),
+            ),
           ),
           Positioned(
             right: 79.5,
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
+            child: Container(
+              width: 23,
+              height: 23,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(23)),
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundColor: Colors.green,
+                ),
+              ),
             ),
           ),
           Positioned(
             right: 62.3,
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
+            child: Container(
+              width: 23,
+              height: 23,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(23)),
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundColor: Colors.grey,
+                ),
+              ),
             ),
           ),
           Positioned(
             right: 44.9,
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
+            child: Container(
+              width: 23,
+              height: 23,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(23)),
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundColor: Colors.red,
+                ),
+              ),
             ),
           ),
           Positioned(
             right: 27.7,
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
+            child: Container(
+              width: 23,
+              height: 23,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(23)),
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundColor: Colors.green,
+                ),
+              ),
             ),
           ),
           Positioned(
-            right: 11,
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
+            right: 11.0,
+            child: Container(
+              width: 23,
+              height: 23,
+              decoration: BoxDecoration(
+                  color: Colors.white, borderRadius: BorderRadius.circular(23)),
+              child: Padding(
+                padding: EdgeInsets.all(3),
+                child: CircleAvatar(
+                  backgroundColor: Colors.lightBlue,
+                ),
+              ),
             ),
-          )
+          ),
+
         ],
       ),
     );
@@ -183,11 +233,14 @@ class SolarexWidgets extends StatelessWidget {
               Positioned(
                 top: 231.5,
                 child: GestureDetector(
-                  onTap: (){
+                  onTap: () {
                     print("去测试");
                   },
-                  child: Text("去测试",
-                    style: TextStyle(color: const Color(0xff1AD9CA), fontSize: 14),),
+                  child: Text(
+                    "去测试",
+                    style:
+                        TextStyle(color: const Color(0xff1AD9CA), fontSize: 14),
+                  ),
                 ),
               )
             ],

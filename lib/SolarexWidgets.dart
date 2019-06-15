@@ -5,7 +5,25 @@ import 'TYTools.dart';
 class SolarexWidgets extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return planDetailsHeader();
+    return testGridView();
+  }
+
+  Widget testGridView() {
+    return GridView.builder(
+      padding: EdgeInsets.only(left: 20.0, right: 20.0),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: 10.0,
+        crossAxisSpacing: 10.0,
+        childAspectRatio: 162.5 / 234,
+      ),
+      itemBuilder: (context, index) {
+        return Container(
+          color: Colors.green,
+        );
+      },
+      itemCount: 6,
+    );
   }
 
   Widget planDetailsHeader() {
@@ -178,7 +196,6 @@ class SolarexWidgets extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
     );
